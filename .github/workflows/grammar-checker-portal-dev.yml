@@ -4,7 +4,7 @@ on:
     branches:
     - main
 env:
-  AZURE_WEBAPP_NAME: grammar-checker-portal-web
+  AZURE_WEBAPP_NAME: grammar-checker-portal-dev
   AZURE_WEBAPP_PACKAGE_PATH: Grammar.Checker.Portal.Web\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
