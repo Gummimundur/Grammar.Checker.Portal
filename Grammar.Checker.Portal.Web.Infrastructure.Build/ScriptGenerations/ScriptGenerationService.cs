@@ -144,7 +144,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Build.ScriptGenerations
                             new RunTask
                             {
                                 Name = "Provision",
-                                Run = "dotnet run --project .\\Grammar.Checker.Portal.Web.Infrastructure.Provision\\Grammar.Checker.Web.Infrastructure.Provision.csproj"
+                                Run = "dotnet run --project .\\Grammar.Checker.Portal.Web.Infrastructure.Provision\\Grammar.Checker.Portal.Web.Infrastructure.Provision.csproj"
                             }
                         }
                     }
