@@ -19,8 +19,11 @@
 		<PackageReference Include="PrettyBlazor" Version="1.2.0" />
 		<PackageReference Include="RESTFulSense" Version="2.9.0" />
 		<PackageReference Include="SharpStyles" Version="0.3.0" />
-		<PackageReference Include="Syncfusion.Blazor" Version="20.3.0.48" />
-		<PackageReference Include="Syncfusion.Blazor.Themes" Version="20.3.0.48" />
+		<PackageReference Include="Syncfusion.Blazor" Version="20.3.0.49" />
+		<PackageReference Include="Syncfusion.Blazor.Themes" Version="20.3.0.49" />
+		<PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+		<PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+		<PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
 		<PackageReference Include="Xeption" Version="2.4.0" />
 	</ItemGroup>
 
