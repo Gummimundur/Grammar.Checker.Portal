@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.Infrastructure.Build", "Grammar.Checker.Portal.Web.Infrastructure.Build\Grammar.Checker.Portal.Web.Infrastructure.Build.csproj", "{2BB1C1B8-9C35-4798-814E-22262272F532}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.Infrastructure.Provision", "Grammar.Checker.Portal.Web.Infrastructure.Provision\Grammar.Checker.Portal.Web.Infrastructure.Provision.csproj", "{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2BB1C1B8-9C35-4798-814E-22262272F532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BB1C1B8-9C35-4798-814E-22262272F532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BB1C1B8-9C35-4798-814E-22262272F532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
