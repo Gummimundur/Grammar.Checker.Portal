@@ -29,4 +29,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Provision
-      run: dotnet run --project .\Grammar.Checker.Portal.Web.Infrastructure.Provision\Grammar.Checker.Web.Infrastructure.Provision.csproj
+      run: dotnet run --project .\Grammar.Checker.Portal.Web.Infrastructure.Provision\Grammar.Checker.Portal.Web.Infrastructure.Provision.csproj
