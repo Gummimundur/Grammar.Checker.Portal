@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Lenovo\.nuget\packages\adotnet\2.1.2\contentFiles\any\net7.0\License.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ADotNet" Version="2.1.2" />
+  </ItemGroup>
+
+</Project>
