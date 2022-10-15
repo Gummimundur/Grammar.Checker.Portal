@@ -8,6 +8,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: Grammar.Checker.Portal.Web\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
+  RUNTIME: win-x86
   WORKING_DIRECTORY: Grammar.Checker.Portal.Web
 jobs:
   build:
@@ -20,13 +21,13 @@ jobs:
         include-prerelease: True
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Restore
-      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+      run: dotnet restore "${{ env.WORKING_DIRECTORY }}" --runtime ${{ env.RUNTIME }}
     - name: Build
-      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --runtime ${{ env.RUNTIME }} --self-contained --no-restore
     - name: Test
       run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
     - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --runtime win-x86 --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --runtime ${{ env.RUNTIME }} --self-contained --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
