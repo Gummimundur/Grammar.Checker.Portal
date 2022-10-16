@@ -2,7 +2,7 @@
 
 namespace Grammar.Checker.Portal.Web.Views.Bases
 {
-    public partial class InlineContainer : ComponentBase
+    public partial class InlineContainerBase : ComponentBase
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
