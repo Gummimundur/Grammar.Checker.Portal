@@ -1,5 +1,5 @@
-﻿using SharpStyles.Models.Attributes;
-using SharpStyles.Models;
+﻿using SharpStyles.Models;
+using SharpStyles.Models.Attributes;
 
 namespace Grammar.Checker.Portal.Web.Models.Views.Components.Headers
 {
