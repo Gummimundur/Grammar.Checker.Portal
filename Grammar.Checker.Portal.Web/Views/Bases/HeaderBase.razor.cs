@@ -6,8 +6,5 @@ namespace Grammar.Checker.Portal.Web.Views.Bases
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
-
-        [Parameter]
-        public string ClassName { get; set; }
     }
 }
