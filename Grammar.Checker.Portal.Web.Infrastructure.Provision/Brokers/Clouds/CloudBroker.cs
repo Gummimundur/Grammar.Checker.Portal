@@ -15,6 +15,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
         private readonly string tenantId;
         private readonly string adminName;
         private readonly string adminAccess;
+        private readonly string licenseKey;
         private readonly IAzure azure;
 
         public CloudBroker()
@@ -25,6 +26,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
             this.adminName = Environment.GetEnvironmentVariable("AzureAdminName");
             this.adminAccess = Environment.GetEnvironmentVariable("AzureAdminAccess");
             this.externalTextAnalyzerUrl = Environment.GetEnvironmentVariable("ExternalTextAnalyzerUrl");
+            this.licenseKey = Environment.GetEnvironmentVariable("SyncFusionLicenseKey");
             this.azure = AuthenticateAzure();
         }
 

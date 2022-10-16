@@ -16,6 +16,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
             {
                 { "ASPNETCORE_ENVIRONMENT", ProjectEnvironment },
                 { "ApiConfigurations:Url", this.externalTextAnalyzerUrl },
+                { "Syncfusion:LicenseKey", this.licenseKey }
             };
 
             return await azure.AppServices.WebApps
