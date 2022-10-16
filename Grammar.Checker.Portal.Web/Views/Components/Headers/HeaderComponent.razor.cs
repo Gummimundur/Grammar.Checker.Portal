@@ -18,6 +18,15 @@ namespace Grammar.Checker.Portal.Web.Views.Components.Headers
         {
             this.Style = new HeaderStyle
             {
+                TopRow = new SharpStyle
+                {
+                    BackgroundColor = "#0078d4",
+                    BorderBottom = "1px solid #d6d5d5",
+                    JustifyContent = "flex-start",
+                    Height = "3.5rem",
+                    Display = "flex",
+                    AlignItems = "center",
+                }
             };
         }
     }
