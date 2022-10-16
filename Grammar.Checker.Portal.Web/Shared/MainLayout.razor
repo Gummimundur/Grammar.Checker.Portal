@@ -1,3 +1,13 @@
-﻿@inherits LayoutComponentBase
+﻿@using Grammar.Checker.Portal.Web.Views.Components.Headers
+@inherits LayoutComponentBase
 
-@Body
+<PageTitle>Grammar Checker</PageTitle>
+
+<div class="page">
+    <main>
+        <HeaderComponent />
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
