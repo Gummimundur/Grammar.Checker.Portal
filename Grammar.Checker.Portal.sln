@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grammar.Checker.Portal.Web", "Grammar.Checker.Portal.Web\Grammar.Checker.Portal.Web.csproj", "{BD2B47DD-CB7B-4B9F-9EA0-655706511DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.Tests.Unit", "Grammar.Checker.Portal.Web.Tests.Unit\Grammar.Checker.Portal.Web.Tests.Unit.csproj", "{BA655047-8CA6-4514-8CD0-BF29E26E9CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grammar.Checker.Portal.Web.Tests.Unit", "Grammar.Checker.Portal.Web.Tests.Unit\Grammar.Checker.Portal.Web.Tests.Unit.csproj", "{BA655047-8CA6-4514-8CD0-BF29E26E9CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.Infrastructure.Build", "Grammar.Checker.Portal.Web.Infrastructure.Build\Grammar.Checker.Portal.Web.Infrastructure.Build.csproj", "{2BB1C1B8-9C35-4798-814E-22262272F532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grammar.Checker.Portal.Web.Infrastructure.Build", "Grammar.Checker.Portal.Web.Infrastructure.Build\Grammar.Checker.Portal.Web.Infrastructure.Build.csproj", "{2BB1C1B8-9C35-4798-814E-22262272F532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar.Checker.Portal.Web.Infrastructure.Provision", "Grammar.Checker.Portal.Web.Infrastructure.Provision\Grammar.Checker.Portal.Web.Infrastructure.Provision.csproj", "{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grammar.Checker.Portal.Web.Infrastructure.Provision", "Grammar.Checker.Portal.Web.Infrastructure.Provision\Grammar.Checker.Portal.Web.Infrastructure.Provision.csproj", "{32EDD1E5-8B9D-4D4A-A46C-F94C037FB573}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
