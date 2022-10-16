@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Azure.Management.Fluent;
+﻿using Microsoft.Azure.Management.Fluent;
+using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
-using Microsoft.Azure.Management.ResourceManager.Fluent;
+using System;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
 {
@@ -30,7 +30,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
 
         private IAzure AuthenticateAzure()
         {
-            AzureCredentials credentials = 
+            AzureCredentials credentials =
                 SdkContext.AzureCredentialsFactory.FromServicePrincipal(
                     clientId: this.clientId,
                     clientSecret: this.clientSecret,

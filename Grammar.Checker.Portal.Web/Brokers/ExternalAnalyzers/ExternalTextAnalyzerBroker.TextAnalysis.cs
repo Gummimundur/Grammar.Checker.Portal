@@ -10,8 +10,8 @@ namespace Grammar.Checker.Portal.Web.Brokers.ExternalTextAnalyzers
         public async ValueTask<ExternalAnalyzedText> AnalyzeTextAsync(string serializedText)
         {
             return await PostAsync<string, ExternalAnalyzedText>(
-                relativeUrl: YfirlesturRelativeUrl, 
-                content: serializedText, 
+                relativeUrl: YfirlesturRelativeUrl,
+                content: serializedText,
                 mediaType: "application/json");
         }
     }

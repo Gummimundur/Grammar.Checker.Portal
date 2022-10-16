@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Configurations;
+﻿using Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Configurations;
 using Grammar.Checker.Portal.Web.Infrastructure.Provision.Models.Configurations;
 using Grammar.Checker.Portal.Web.Infrastructure.Provision.Services.Foundations;
 using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Services.Processings
 {

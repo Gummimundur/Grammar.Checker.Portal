@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using static Grammar.Checker.Portal.Web.Views.Pages.Index;
 
 namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
 {
