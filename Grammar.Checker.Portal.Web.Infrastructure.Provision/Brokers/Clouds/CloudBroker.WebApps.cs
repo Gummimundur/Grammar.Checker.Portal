@@ -15,10 +15,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
             var webAppSettings = new Dictionary<string, string>
             {
                 { "ASPNETCORE_ENVIRONMENT", ProjectEnvironment },
-                { "ApiConfiguration:Url", this.yfirlesturApiUrl },
-                { "AzureAd:TenantId", this.tenantId },
-                { "AzureAd:ClientId", this.clientId },
-                { "AzureAd:ClientSecrete", this.clientSecret }
+                { "ApiConfigurations:Url", this.externalTextAnalyzerUrl },
             };
 
             return await azure.AppServices.WebApps
