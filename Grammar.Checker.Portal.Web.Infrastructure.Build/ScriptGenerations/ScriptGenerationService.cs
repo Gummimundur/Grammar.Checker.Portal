@@ -110,7 +110,8 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Build.ScriptGenerations
                             { "AzureTenantId", "${{ secrets.AZURETENANTID }}" },
                             { "AzureAdminName", "${{ secrets.AZUREADMINNAME }}" },
                             { "AzureAdminAccess", "${{ secrets.AZUREADMINACCESS }}" },
-                            { "ExternalTextAnalyzerUrl", "${{ secrets.EXTERNALTEXTANALYZERURL }}" }
+                            { "ExternalTextAnalyzerUrl", "${{ secrets.EXTERNALTEXTANALYZERURL }}" },
+                            { "SyncFusionLicenseKey", "${{ secrets.SYNCFUSIONLICENSEKEY }}" }
                         },
 
                         Steps = new List<GithubTask>

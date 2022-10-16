@@ -16,6 +16,7 @@ jobs:
       AzureAdminName: ${{ secrets.AZUREADMINNAME }}
       AzureAdminAccess: ${{ secrets.AZUREADMINACCESS }}
       ExternalTextAnalyzerUrl: ${{ secrets.EXTERNALTEXTANALYZERURL }}
+      SyncFusionLicenseKey: ${{ secrets.SYNCFUSIONLICENSEKEY }}
     steps:
     - name: Check out
       uses: actions/checkout@v2
