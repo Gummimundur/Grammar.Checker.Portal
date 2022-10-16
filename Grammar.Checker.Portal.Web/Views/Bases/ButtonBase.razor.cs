@@ -9,9 +9,6 @@ namespace Grammar.Checker.Portal.Web.Views.Bases
         public string Label { get; set; }
 
         [Parameter]
-        public string CssClass { get; set; }
-
-        [Parameter]
         public Action OnClick { get; set; }
 
         [Parameter]
