@@ -1,6 +1,6 @@
-﻿using System.IO;
-using Grammar.Checker.Portal.Web.Infrastructure.Provision.Models.Configurations;
+﻿using Grammar.Checker.Portal.Web.Infrastructure.Provision.Models.Configurations;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Configurations
 {

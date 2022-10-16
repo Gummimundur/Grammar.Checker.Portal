@@ -1,5 +1,5 @@
-﻿using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
-using Microsoft.Azure.Management.ResourceManager.Fluent;
+﻿using Microsoft.Azure.Management.ResourceManager.Fluent;
+using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
 using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds

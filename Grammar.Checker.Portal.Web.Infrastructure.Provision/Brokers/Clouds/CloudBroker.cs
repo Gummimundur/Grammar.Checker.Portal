@@ -1,15 +1,15 @@
-﻿using System;
-using Microsoft.Azure.Management.Fluent;
+﻿using Microsoft.Azure.Management.Fluent;
+using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
-using Microsoft.Azure.Management.ResourceManager.Fluent;
+using System;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
 {
     public partial class CloudBroker : ICloudBroker
     {
         private const string ProjectEnvironment = "Production";
-        private readonly string yfirlesturApiUrl;
+        private readonly string externalTextAnalyzerUrl;
         private readonly string clientId;
         private readonly string clientSecret;
         private readonly string tenantId;
@@ -24,13 +24,13 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
             this.tenantId = Environment.GetEnvironmentVariable("AzureTenantId");
             this.adminName = Environment.GetEnvironmentVariable("AzureAdminName");
             this.adminAccess = Environment.GetEnvironmentVariable("AzureAdminAccess");
-            this.yfirlesturApiUrl = Environment.GetEnvironmentVariable("YfirlesturApiUrl");
+            this.externalTextAnalyzerUrl = Environment.GetEnvironmentVariable("ExternalTextAnalyzerUrl");
             this.azure = AuthenticateAzure();
         }
 
         private IAzure AuthenticateAzure()
         {
-            AzureCredentials credentials = 
+            AzureCredentials credentials =
                 SdkContext.AzureCredentialsFactory.FromServicePrincipal(
                     clientId: this.clientId,
                     clientSecret: this.clientSecret,

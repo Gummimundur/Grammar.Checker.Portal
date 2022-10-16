@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Grammar.Checker.Portal.Web.Infrastructure.Provision.Services.Processings;
+﻿using Grammar.Checker.Portal.Web.Infrastructure.Provision.Services.Processings;
+using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Infrastructure.Provision
 {

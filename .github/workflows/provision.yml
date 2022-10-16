@@ -15,7 +15,7 @@ jobs:
       AzureTenantId: ${{ secrets.AZURETENANTID }}
       AzureAdminName: ${{ secrets.AZUREADMINNAME }}
       AzureAdminAccess: ${{ secrets.AZUREADMINACCESS }}
-      YfirlesturApiUrl: ${{ secrets.YFIRLESTURAPIURL }}
+      ExternalTextAnalyzerUrl: ${{ secrets.EXTERNALTEXTANALYZERURL }}
     steps:
     - name: Check out
       uses: actions/checkout@v2
