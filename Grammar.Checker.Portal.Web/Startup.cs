@@ -1,4 +1,5 @@
 using Grammar.Checker.Portal.Web.Brokers.ExternalTextAnalyzers;
+using Grammar.Checker.Portal.Web.Brokers.Loggings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -55,8 +56,11 @@ namespace Grammar.Checker.Portal.Web
             });
         }
 
-        private static void AddBrokers(IServiceCollection services) =>
+        private static void AddBrokers(IServiceCollection services)
+        {
+            services.AddTransient<ILoggingBroker, LoggingBroker>();
             services.AddTransient<IExternalTextAnalyzerBroker, ExternalTextAnalyzerBroker>();
+        }
 
         private static void MapControllersForEnvironments(
             IApplicationBuilder app,
