@@ -1,3 +1,5 @@
+using Grammar.Checker.Portal.Web.Brokers.Analyzers;
+using Grammar.Checker.Portal.Web.Brokers.ExternalTextAnalyzers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -10,17 +12,19 @@ namespace Grammar.Checker.Portal.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) => 
+        public Startup(IConfiguration configuration) =>
             Configuration = configuration;
 
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSyncfusionBlazor();
             AddRootDirectory(services);
+            AddBrokers(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -51,6 +55,9 @@ namespace Grammar.Checker.Portal.Web
                 options.RootDirectory = "/Views/Pages";
             });
         }
+
+        private static void AddBrokers(IServiceCollection services) =>
+            services.AddTransient<IExternalTextAnalyzerBroker, ExternalTextAnalyzerBroker>();
 
         private static void MapControllersForEnvironments(
             IApplicationBuilder app,
