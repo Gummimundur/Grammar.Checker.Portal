@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\" />
+    <ProjectReference Include="..\Grammar.Checker.Portal.Web\Grammar.Checker.Portal.Web.csproj" />
   </ItemGroup>
 
 </Project>
