@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
+namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText
 {
     public class ExternalAnalyzedText
     {

@@ -1,4 +1,4 @@
-﻿using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText;
+﻿using Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText;
 using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Brokers.ExternalTextAnalyzers

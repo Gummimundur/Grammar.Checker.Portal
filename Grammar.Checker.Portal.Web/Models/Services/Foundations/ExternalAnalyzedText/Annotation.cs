@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
+namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText
 {
     public class Annotation
     {
@@ -8,7 +8,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
         public string Code { get; set; }
 
         [JsonProperty("detail")]
-        public object Detail { get; set; }
+        public string Detail { get; set; }
 
         [JsonProperty("end")]
         public long End { get; set; }
