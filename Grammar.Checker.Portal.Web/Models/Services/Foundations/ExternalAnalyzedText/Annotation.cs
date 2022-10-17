@@ -17,7 +17,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyze
         public long EndCharacter { get; set; }
 
         [JsonProperty("references")]
-        public object[] References { get; set; }
+        public string[] References { get; set; }
 
         [JsonProperty("start")]
         public long Start { get; set; }
@@ -29,7 +29,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyze
         public string Suggest { get; set; }
 
         [JsonProperty("suggestlist")]
-        public object SuggestionList { get; set; }
+        public string[] SuggestionList { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; }
