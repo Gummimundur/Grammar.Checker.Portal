@@ -1,6 +1,6 @@
-﻿namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
+﻿namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText
 {
-    public enum WordType
+    public enum SymbolType
     {
         Punctuation = 1,
         Time,

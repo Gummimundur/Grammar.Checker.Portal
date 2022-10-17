@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 
-namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
+namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText
 {
-    public class Token
+    public class Symbol
     {
         [JsonProperty("i")]
         public long WordIndex { get; set; }
 
         [JsonProperty("k")]
-        public WordType WordType { get; set; }
+        public SymbolType SymbolType { get; set; }
 
         [JsonProperty("o")]
         public string OriginalText { get; set; }
