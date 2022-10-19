@@ -4,7 +4,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText.Ex
 {
     public class AnalyzedTextDependencyException : Xeption
     {
-        public AnalyzedTextDependencyException(Xeption innerException) 
+        public AnalyzedTextDependencyException(Xeption innerException)
             : base(message: "Analyzed text dependency error occurred",
                   innerException)
         { }

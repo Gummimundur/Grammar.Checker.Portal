@@ -105,7 +105,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
             string randomString = GetRandomString();
             string someInputText = randomString;
 
-            ExternalAnalyzedText invalidExternalAnalyzedText = 
+            ExternalAnalyzedText invalidExternalAnalyzedText =
                 CreateRandomExternalAnalyzedText(valid: false);
 
             var invalidAnalyzedTextRequestException =

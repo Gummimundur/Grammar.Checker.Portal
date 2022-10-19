@@ -48,7 +48,7 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             }
             catch (HttpResponseException httpResponseException)
             {
-                var failedAnalyzedTextDependencyException = 
+                var failedAnalyzedTextDependencyException =
                     new FailedAnalyzedTextDependencyException(httpResponseException);
 
                 throw CreateAndLogDependencyException(failedAnalyzedTextDependencyException);
