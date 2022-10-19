@@ -13,7 +13,7 @@ namespace Grammar.Checker.Portal.Web.Infrastructure.Provision.Brokers.Clouds
                 .Define(name: planName)
                 .WithRegion(region: Region.EuropeNorth)
                 .WithExistingResourceGroup(group: resourceGroup)
-                .WithPricingTier(pricingTier: PricingTier.StandardS1)
+                .WithPricingTier(pricingTier: PricingTier.FreeF1)
                 .WithOperatingSystem(operatingSystem: OperatingSystem.Windows)
                 .CreateAsync();
         }
