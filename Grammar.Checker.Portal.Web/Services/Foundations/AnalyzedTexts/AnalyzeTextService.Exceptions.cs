@@ -1,6 +1,7 @@
 ﻿using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText;
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText.Exceptions;
 using RESTFulSense.Exceptions;
+using System;
 using System.Threading.Tasks;
 using Xeptions;
 
@@ -44,6 +45,12 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 
                 throw CreateAndLogDependencyException(failedAnalyzedTextDependencyException);
             }
+            catch (Exception exception)
+            {
+                var failedAnalyzedTextServiceException = new FailedAnalyzedTextServiceException(exception);
+
+                throw CreateAndLogServiceException(failedAnalyzedTextServiceException);
+            }
         }
         private AnalyzedTextDependencyException CreateAndLogCriticalDependencyException(Xeption exception)
         {
@@ -59,6 +66,14 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             this.loggingBroker.LogError(analyzedTextDependencyException);
 
             return analyzedTextDependencyException;
+        }
+
+        private AnalyzedTextServiceException CreateAndLogServiceException(Xeption exception)
+        {
+            var analyzedTextServiceException = new AnalyzedTextServiceException(exception);
+            this.loggingBroker.LogError(analyzedTextServiceException);
+
+            return analyzedTextServiceException;
         }
     }
 }
