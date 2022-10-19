@@ -20,13 +20,14 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             this.loggingBroker = loggingBroker;
         }
 
-        public async ValueTask<AnalyzedText> AnalyzeTextAsync(string text)
+        public ValueTask<AnalyzedText> AnalyzeTextAsync(string text) =>
+        TryCatch(async () =>
         {
             ExternalAnalyzedText externalAnalyzedText =
                 await RunExternalTextAnalyzerAsync(text);
 
             return AsAnalyzedText(externalAnalyzedText);
-        }
+        });
 
         private async Task<ExternalAnalyzedText> RunExternalTextAnalyzerAsync(string text)
         {
