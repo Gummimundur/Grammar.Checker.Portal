@@ -96,5 +96,48 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
             this.externalTextAnalyzerBrokerMock.VerifyNoOtherCalls();
             this.loggingBrokerMock.VerifyNoOtherCalls();
         }
+
+        [Fact]
+        public async Task ShouldThrowServiceExceptionOnAnalyzeTextIfErrorOccursAndLogItAsync()
+        {
+            // Arrange
+            string randomString = GetRandomString();
+            string someInputText = randomString;
+            var serviceException = new Exception();
+
+            var failedAnalyzedTextServiceException =
+                new FailedAnalyzedTextServiceException(serviceException);
+
+            var expectedAnalyzedtextServiceException =
+                new AnalyzedTextServiceException(failedAnalyzedTextServiceException);
+
+            this.externalTextAnalyzerBrokerMock.Setup(broker =>
+                broker.AnalyzeTextAsync(It.IsAny<string>()))
+                    .ThrowsAsync(serviceException);
+
+            // Act
+            ValueTask<AnalyzedText> analyzeTextTask =
+                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+
+            AnalyzedTextServiceException actualAnalyzedTextServiceException =
+                await Assert.ThrowsAsync<AnalyzedTextServiceException>(
+                    analyzeTextTask.AsTask);
+
+            // Assert
+            actualAnalyzedTextServiceException.Should().BeEquivalentTo(
+                expectedAnalyzedtextServiceException);
+
+            this.externalTextAnalyzerBrokerMock.Verify(broker =>
+                broker.AnalyzeTextAsync(It.IsAny<string>()),
+                    Times.Once);
+
+            this.loggingBrokerMock.Verify(broker =>
+                broker.LogError(It.Is(SameExceptionAs(
+                    expectedAnalyzedtextServiceException))),
+                        Times.Once);
+
+            this.externalTextAnalyzerBrokerMock.VerifyNoOtherCalls();
+            this.loggingBrokerMock.VerifyNoOtherCalls();
+        }
     }
 }
