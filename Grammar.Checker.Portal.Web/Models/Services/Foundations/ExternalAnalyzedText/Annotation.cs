@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
+namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText
 {
     public class Annotation
     {
@@ -8,7 +8,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
         public string Code { get; set; }
 
         [JsonProperty("detail")]
-        public object Detail { get; set; }
+        public string Detail { get; set; }
 
         [JsonProperty("end")]
         public long End { get; set; }
@@ -17,7 +17,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
         public long EndCharacter { get; set; }
 
         [JsonProperty("references")]
-        public object[] References { get; set; }
+        public string[] References { get; set; }
 
         [JsonProperty("start")]
         public long Start { get; set; }
@@ -29,7 +29,7 @@ namespace Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText
         public string Suggest { get; set; }
 
         [JsonProperty("suggestlist")]
-        public object SuggestionList { get; set; }
+        public string[] SuggestionList { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; }
