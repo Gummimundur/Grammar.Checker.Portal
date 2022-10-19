@@ -2,6 +2,7 @@
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText;
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText.Exceptions;
 using Moq;
+using RESTFulSense.Exceptions;
 using Xeptions;
 using Xunit;
 
@@ -46,6 +47,49 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             this.loggingBrokerMock.Verify(broker =>
                 broker.LogCritical(It.Is(SameExceptionAs(
+                    expectedAnalyzedTextDependencyException))),
+                        Times.Once);
+
+            this.externalTextAnalyzerBrokerMock.VerifyNoOtherCalls();
+            this.loggingBrokerMock.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public async Task ShouldThrowDependencyExceptionOnAnalyzeTextIfErrorOccursAndLogItAsync()
+        {
+            // Arrange
+            string randomString = GetRandomString();
+            string someInputText = randomString;
+            var httpResponseException = new HttpResponseException();
+
+            var failedAnalyzedTextDependencyException =
+                new FailedAnalyzedTextDependencyException(httpResponseException);
+
+            var expectedAnalyzedTextDependencyException =
+                new AnalyzedTextDependencyException(failedAnalyzedTextDependencyException);
+
+            this.externalTextAnalyzerBrokerMock.Setup(broker =>
+                broker.AnalyzeTextAsync(It.IsAny<string>()))
+                    .ThrowsAsync(httpResponseException);
+
+            // Act
+            ValueTask<AnalyzedText> analyzeTextTask =
+                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+
+            AnalyzedTextDependencyException actualAnalyzedTextDependencyException =
+                await Assert.ThrowsAsync<AnalyzedTextDependencyException>(
+                    analyzeTextTask.AsTask);
+
+            // Assert
+            actualAnalyzedTextDependencyException.Should().BeEquivalentTo(
+                expectedAnalyzedTextDependencyException);
+
+            this.externalTextAnalyzerBrokerMock.Verify(broker =>
+                broker.AnalyzeTextAsync(It.IsAny<string>()),
+                    Times.Once);
+
+            this.loggingBrokerMock.Verify(broker =>
+                broker.LogError(It.Is(SameExceptionAs(
                     expectedAnalyzedTextDependencyException))),
                         Times.Once);
 
