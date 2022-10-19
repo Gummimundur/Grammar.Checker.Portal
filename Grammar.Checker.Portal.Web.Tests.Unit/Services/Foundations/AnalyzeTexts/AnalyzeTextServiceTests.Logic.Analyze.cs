@@ -2,6 +2,7 @@
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText;
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText;
 using Moq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeTexts

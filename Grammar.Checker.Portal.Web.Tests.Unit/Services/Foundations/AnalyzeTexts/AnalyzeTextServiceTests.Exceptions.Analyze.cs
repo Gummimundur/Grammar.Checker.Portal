@@ -4,6 +4,8 @@ using Grammar.Checker.Portal.Web.Models.Services.Foundations.AnalyzedText.Except
 using Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedText;
 using Moq;
 using RESTFulSense.Exceptions;
+using System;
+using System.Threading.Tasks;
 using Xeptions;
 using Xunit;
 
