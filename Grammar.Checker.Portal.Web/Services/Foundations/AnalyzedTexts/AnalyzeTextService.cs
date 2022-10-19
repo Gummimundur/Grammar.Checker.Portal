@@ -38,6 +38,8 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             ExternalAnalyzedText externalAnalyxedText =
                 await this.externalTextAnalyzerBroker.AnalyzeTextAsync(serializedText);
 
+            ValidateExternalAnalyzedText(externalAnalyxedText);
+
             return externalAnalyxedText;
         }
 

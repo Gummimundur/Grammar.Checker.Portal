@@ -21,6 +21,10 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             {
                 throw CreateAndLogValidationException(invalidAnalyzedTextException);
             }
+            catch (InvalidAnalyzedTextRequestException invalidAnalyzedTextRequestException)
+            {
+                throw CreateAndLogDependencyValidationException(invalidAnalyzedTextRequestException);
+            }
             catch (HttpResponseUrlNotFoundException httpResponseUrlNotFoundException)
             {
                 var failedAnalyzedTextDependencyException =
@@ -79,6 +83,14 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
             this.loggingBroker.LogError(analyzedTextDependencyException);
 
             return analyzedTextDependencyException;
+        }
+
+        private AnalyzedTextDependencyValidationException CreateAndLogDependencyValidationException(Xeption exception)
+        {
+            var analyzedTextDependencyValidationException = new AnalyzedTextDependencyValidationException(exception);
+            this.loggingBroker.LogError(analyzedTextDependencyValidationException);
+
+            return analyzedTextDependencyValidationException;
         }
 
         private AnalyzedTextServiceException CreateAndLogServiceException(Xeption exception)
