@@ -1,0 +1,11 @@
+﻿@using Syncfusion.Blazor.RichTextEditor
+
+<SfRichTextEditor @ref=RichTextEditor
+                  @bind-Value=@Value
+                  Placeholder=@Placeholder
+                  Enabled=@IsEnabled
+                  CssClass=@CssClass>
+    <RichTextEditorQuickToolbarSettings Enable=false />
+    <RichTextEditorInlineMode Enable=true ShowOnSelection=false />
+    <RichTextEditorEvents ValueChange=@OnValueChanged />
+</SfRichTextEditor>
