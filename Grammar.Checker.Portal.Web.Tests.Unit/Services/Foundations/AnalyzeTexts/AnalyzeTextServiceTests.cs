@@ -79,7 +79,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
                 Statistics = randomStatistics,
                 Text = GetRandomString(),
                 Reason = GetRandomString(),
-                Valid = GetRandomBoolean()
+                Valid = true
             };
         }
 
@@ -194,8 +194,5 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
         private static string GetRandomString() =>
             new MnemonicString().GetValue();
-
-        private static bool GetRandomBoolean() =>
-            new Random().Next(2) == 1;
     }
 }
