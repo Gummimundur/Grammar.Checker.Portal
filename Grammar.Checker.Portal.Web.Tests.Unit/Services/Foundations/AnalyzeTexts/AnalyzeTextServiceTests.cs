@@ -7,7 +7,11 @@ using Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts;
 using KellermanSoftware.CompareNetObjects;
 using Moq;
 using Newtonsoft.Json;
+using RESTFulSense.Exceptions;
+using System.Linq.Expressions;
 using Tynamix.ObjectFiller;
+using Xeptions;
+using Xunit;
 
 namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeTexts
 {
@@ -29,6 +33,19 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
                 externalTextAnalyzerBroker: this.externalTextAnalyzerBrokerMock.Object,
                 loggingBroker: this.loggingBrokerMock.Object);
         }
+
+        public static TheoryData CriticalDependencyExceptions()
+        {
+            return new TheoryData<Xeption>()
+            {
+                new HttpResponseUrlNotFoundException(),
+                new HttpResponseUnauthorizedException(),
+                new HttpResponseForbiddenException()
+            };
+        }
+
+        private static Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException) =>
+            actualException => actualException.SameExceptionAs(expectedException);
 
         public static dynamic CreateRandomAnalyzedTextProperties()
         {
