@@ -62,9 +62,6 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
                 (Annotation[] randomAnnotations, List<Explanation> correspondingExplanations) =
                     GetRandomAnnotationsProperties();
 
-                (Symbol[] randomSymbols, List<Token> correspondingTokens) =
-                    GetRandomSymbolProperties();
-
                 string randomCorrected = GetRandomString();
                 string randomOriginal = GetRandomString();
                 string randomToken = GetRandomString();
@@ -75,15 +72,14 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
                     Corrected = randomCorrected,
                     Original = randomOriginal,
                     Token = randomToken,
-                    Symbols = randomSymbols,
+                    Symbols = GetRandomSymbols(),
                 };
 
                 var randomSuggestion = new Suggestion
                 {
                     Explanations = correspondingExplanations,
                     CorrectedText = randomCorrected,
-                    OriginalText = randomOriginal,
-                    Tokens = correspondingTokens
+                    OriginalText = randomOriginal
                 };
 
                 return (randomResult, randomSuggestion);
@@ -111,29 +107,19 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
                     Explanations = randomObject.randomSuggestion.Explanations,
                     CorrectedText = randomObject.randomSuggestion.CorrectedText,
                     OriginalText = randomObject.randomSuggestion.OriginalText,
-                    Tokens = randomObject.randomSuggestion.Tokens
                 };
             }).ToList();
 
             return (randomResults, randomSuggestions);
         }
 
-        private static (Symbol[] randomSymbols, List<Token> correspondingTokens) GetRandomSymbolProperties()
+        private static Symbol[] GetRandomSymbols()
         {
-            Symbol[] randomSymbols = GetRandomSymbols();
+            int randomCount = GetRandomNumber();
 
-            List<Token> randomTokens = randomSymbols.Select(symbol =>
-            {
-                return new Token
-                {
-                    WordIndex = symbol.WordIndex,
-                    TokenType = (TokenType)symbol.SymbolType,
-                    OriginalText = symbol.OriginalText,
-                    CorrectedText = symbol.CorrectedText
-                };
-            }).ToList();
+            var filler = new Filler<Symbol>();
 
-            return (randomSymbols, randomTokens);
+            return filler.Create(count: randomCount).ToArray();
         }
 
         private static (Annotation[] randomAnnotations, List<Explanation> correspondingExplanations)
@@ -171,15 +157,6 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
         private static Statistics CreateRandomStatistics() =>
             new Filler<Statistics>().Create();
-
-        private static Symbol[] GetRandomSymbols()
-        {
-            int randomCount = GetRandomNumber();
-
-            var symbolFiller = new Filler<Symbol>();
-
-            return symbolFiller.Create(randomCount).ToArray();
-        }
 
         private static int GetRandomNumber() =>
             new IntRange(min: 1, max: 15).GetValue();

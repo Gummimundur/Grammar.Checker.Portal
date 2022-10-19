@@ -28,27 +28,9 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
                     Explanations = AsExplanation(result),
                     CorrectedText = result.Corrected,
                     OriginalText = result.Original,
-                    Tokens = AsTokens(result)
                 };
             }).ToList();
         }
-
-        private static List<Token> AsTokens(Result result)
-        {
-            return result.Symbols.Select(symbol =>
-            {
-                return new Token
-                {
-                    WordIndex = symbol.WordIndex,
-                    TokenType = AsTokenType(symbol),
-                    OriginalText = symbol.OriginalText,
-                    CorrectedText = symbol.CorrectedText
-                };
-            }).ToList();
-        }
-
-        private static TokenType AsTokenType(Symbol symbol) =>
-            (TokenType)symbol.SymbolType;
 
         private static List<Explanation> AsExplanation(Result result)
         {
