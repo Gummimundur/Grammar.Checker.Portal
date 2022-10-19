@@ -65,7 +65,7 @@ namespace Grammar.Checker.Portal.Web
         }
 
         private static void AddFoundations(IServiceCollection services) =>
-            services.AddTransient<IAnalyzeTextService, AnalyzeTextService>();
+            services.AddTransient<IAnalyzedTextService, AnalyzedTextService>();
 
         private static void MapControllersForEnvironments(
             IApplicationBuilder app,
