@@ -37,6 +37,13 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 
                 throw CreateAndLogCriticalDependencyException(failedAnalyzedTextDependencyException);
             }
+            catch (HttpResponseException httpResponseException)
+            {
+                var failedAnalyzedTextDependencyException = 
+                    new FailedAnalyzedTextDependencyException(httpResponseException);
+
+                throw CreateAndLogDependencyException(failedAnalyzedTextDependencyException);
+            }
         }
         private AnalyzedTextDependencyException CreateAndLogCriticalDependencyException(Xeption exception)
         {
@@ -45,5 +52,13 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 
             return analyzedTextDependencyException;
         }
-}
+
+        private AnalyzedTextDependencyException CreateAndLogDependencyException(Xeption exception)
+        {
+            var analyzedTextDependencyException = new AnalyzedTextDependencyException(exception);
+            this.loggingBroker.LogError(analyzedTextDependencyException);
+
+            return analyzedTextDependencyException;
+        }
+    }
 }
