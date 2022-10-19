@@ -35,12 +35,12 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
         {
             string serializedText = SerializeText(text);
 
-            ExternalAnalyzedText externalAnalyxedText =
+            ExternalAnalyzedText externalAnalyzedText =
                 await this.externalTextAnalyzerBroker.AnalyzeTextAsync(serializedText);
 
-            ValidateExternalAnalyzedText(externalAnalyxedText);
+            ValidateExternalAnalyzedText(externalAnalyzedText);
 
-            return externalAnalyxedText;
+            return externalAnalyzedText;
         }
 
         private static string SerializeText(string textToSerialize)
