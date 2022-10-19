@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 {
-    public interface IAnalyzeTextService
+    public interface IAnalyzedTextService
     {
         ValueTask<AnalyzedText> AnalyzeTextAsync(string text);
     }

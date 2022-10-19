@@ -29,7 +29,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             ValueTask<AnalyzedText> analyzeTextTask =
-                this.analyzeTextService.AnalyzeTextAsync(invalidText);
+                this.analyzedTextService.AnalyzeTextAsync(invalidText);
 
             AnalyzedTextValidationException actualAnalyzedTextValidationException =
                 await Assert.ThrowsAsync<AnalyzedTextValidationException>(

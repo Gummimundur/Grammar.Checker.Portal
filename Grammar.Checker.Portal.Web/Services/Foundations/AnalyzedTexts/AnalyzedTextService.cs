@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 {
-    public partial class AnalyzeTextService : IAnalyzeTextService
+    public partial class AnalyzedTextService : IAnalyzedTextService
     {
         private readonly IExternalTextAnalyzerBroker externalTextAnalyzerBroker;
         private readonly ILoggingBroker loggingBroker;
 
-        public AnalyzeTextService(
+        public AnalyzedTextService(
             IExternalTextAnalyzerBroker externalTextAnalyzerBroker,
             ILoggingBroker loggingBroker)
         {

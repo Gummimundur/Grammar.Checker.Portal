@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 {
-    public partial class AnalyzeTextService
+    public partial class AnalyzedTextService
     {
         private static AnalyzedText AsAnalyzedText(ExternalAnalyzedText externalAnalyzedText)
         {

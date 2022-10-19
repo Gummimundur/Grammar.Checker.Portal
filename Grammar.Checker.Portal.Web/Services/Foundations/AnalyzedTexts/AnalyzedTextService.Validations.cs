@@ -4,7 +4,7 @@ using Grammar.Checker.Portal.Web.Models.Services.Foundations.ExternalAnalyzedTex
 
 namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 {
-    public partial class AnalyzeTextService
+    public partial class AnalyzedTextService
     {
         private static void ValidateText(string text) =>
             Validate((Rule: IsInvalid(text), Parameter: nameof(AnalyzedText.Text)));

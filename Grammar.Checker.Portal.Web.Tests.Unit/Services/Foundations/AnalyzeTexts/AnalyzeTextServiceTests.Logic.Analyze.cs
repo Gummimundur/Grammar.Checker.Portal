@@ -44,7 +44,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             AnalyzedText actualAnalyzedText =
-                await this.analyzeTextService.AnalyzeTextAsync(inputString);
+                await this.analyzedTextService.AnalyzeTextAsync(inputString);
 
             // Assert
             actualAnalyzedText.Should().BeEquivalentTo(

@@ -7,7 +7,7 @@ using Xeptions;
 
 namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
 {
-    public partial class AnalyzeTextService
+    public partial class AnalyzedTextService
     {
         private delegate ValueTask<AnalyzedText> ReturningAnalyzedTextFunction();
 

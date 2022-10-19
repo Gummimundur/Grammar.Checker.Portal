@@ -34,7 +34,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             ValueTask<AnalyzedText> analyzeTextTask =
-                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+                this.analyzedTextService.AnalyzeTextAsync(someInputText);
 
             AnalyzedTextDependencyException actualAnalyzedTextDependencyException =
                 await Assert.ThrowsAsync<AnalyzedTextDependencyException>(
@@ -77,7 +77,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             ValueTask<AnalyzedText> analyzeTextTask =
-                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+                this.analyzedTextService.AnalyzeTextAsync(someInputText);
 
             AnalyzedTextDependencyException actualAnalyzedTextDependencyException =
                 await Assert.ThrowsAsync<AnalyzedTextDependencyException>(
@@ -124,7 +124,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             ValueTask<AnalyzedText> analyzeTextTask =
-                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+                this.analyzedTextService.AnalyzeTextAsync(someInputText);
 
             AnalyzedTextDependencyValidationException actualAnalyzedTextDependencyValidationException =
                 await Assert.ThrowsAsync<AnalyzedTextDependencyValidationException>(
@@ -167,7 +167,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
 
             // Act
             ValueTask<AnalyzedText> analyzeTextTask =
-                this.analyzeTextService.AnalyzeTextAsync(someInputText);
+                this.analyzedTextService.AnalyzeTextAsync(someInputText);
 
             AnalyzedTextServiceException actualAnalyzedTextServiceException =
                 await Assert.ThrowsAsync<AnalyzedTextServiceException>(

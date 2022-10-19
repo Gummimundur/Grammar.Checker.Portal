@@ -24,7 +24,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
         private readonly Mock<ILoggingBroker> loggingBrokerMock;
         private readonly ICompareLogic compareLogic;
 
-        private readonly IAnalyzeTextService analyzeTextService;
+        private readonly IAnalyzedTextService analyzedTextService;
 
         public AnalyzeTextServiceTests()
         {
@@ -32,7 +32,7 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
             this.loggingBrokerMock = new Mock<ILoggingBroker>();
             this.compareLogic = new CompareLogic();
 
-            this.analyzeTextService = new AnalyzeTextService(
+            this.analyzedTextService = new AnalyzedTextService(
                 externalTextAnalyzerBroker: this.externalTextAnalyzerBrokerMock.Object,
                 loggingBroker: this.loggingBrokerMock.Object);
         }
