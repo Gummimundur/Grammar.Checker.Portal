@@ -44,6 +44,20 @@ namespace Grammar.Checker.Portal.Web.Tests.Unit.Services.Foundations.AnalyzeText
             };
         }
 
+        private static ExternalAnalyzedText CreateRandomExternalAnalyzedText(bool valid) =>
+            CreateExternalAnalyzedTextFiller(valid).Create();
+
+        private static Filler<ExternalAnalyzedText> CreateExternalAnalyzedTextFiller(bool valid)
+        {
+            var filler = new Filler<ExternalAnalyzedText>();
+
+            filler.Setup()
+                .OnProperty(externalAnalyzedFiller => externalAnalyzedFiller.Valid)
+                    .Use(valid);
+
+            return filler;
+        }
+
         private static Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException) =>
             actualException => actualException.SameExceptionAs(expectedException);
 
