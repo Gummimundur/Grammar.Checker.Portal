@@ -23,6 +23,8 @@ namespace Grammar.Checker.Portal.Web.Services.Foundations.AnalyzedTexts
         public ValueTask<AnalyzedText> AnalyzeTextAsync(string text) =>
         TryCatch(async () =>
         {
+            ValidateText(text);
+
             ExternalAnalyzedText externalAnalyzedText =
                 await RunExternalTextAnalyzerAsync(text);
 
